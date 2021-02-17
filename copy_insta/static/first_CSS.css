@@ -1,0 +1,12 @@
+body {
+    margin: 0;
+}
+
+.panneau1 {
+    box-sizing: border-box;
+    display: flex;
+    float: none;
+    line-height: 18px;
+    position: fixed;
+    z-index: 3;
+}

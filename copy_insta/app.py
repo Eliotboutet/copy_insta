@@ -1,11 +1,11 @@
-from flask import Flask
+import flask
 
-app = Flask(__name__)
+app = flask.Flask(__name__)
 
 
 @app.route('/')
-def hello_world():
-    return 'Plutôt beau gosse ouais'
+def first_boot():
+    return flask.render_template("template_bootstrap1.jinja2")
 
 
 if __name__ == '__main__':
