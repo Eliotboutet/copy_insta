@@ -25,7 +25,7 @@ def get_all_engineers():
 
 @app.route('/')
 def first_boot():
-    return flask.render_template("template_bootstrap1.jinja2")
+    return flask.render_template("home_page.html.jinja2")
 
 
 if __name__ == Flask('__main__'):
