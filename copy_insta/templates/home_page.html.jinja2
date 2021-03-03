@@ -4,12 +4,30 @@
 
     {% block content %}
         <div class="panneau_debut" >
-            <>
-                <img src="/static/images/logo_imt.jpg" class="img" alt="Logo Imt Atlantique">
+            <div class="div_aligned">
+                <img src="/static/images/logo_imt.jpg" class="logo" alt="Logo Imt Atlantique">
                 <label class="barre_recherche">Search for IMT'stagramers:
                     <input type="text">
+            </div>
+            <div class="div_aligned">
                 </label>
                 <button>Search</button>
+            </div>
+            <div class="div_aligned">
+                <ul>
+                    <li style="display:inline">
+                        <a href="http://127.0.0.1:5000/">
+                        <img src="/static/images/icone_maison2.png" class="icone_cliquable" alt="logo Home" />
+                        </a>
+                    </li>
+                    <li style="display:inline">
+                        <a href=>
+                            <div class="icone_cliquable div_aligned">
+                                Profil
+                            </div>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
     {% endblock %}

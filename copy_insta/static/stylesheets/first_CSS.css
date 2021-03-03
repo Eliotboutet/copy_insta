@@ -8,11 +8,24 @@ body {
     line-height: 20px;
 }
 
-.img {
+.logo {
     width: 150px;
     margin-left: 300px;
 }
 
 .barre_recherche {
     margin-left: 200px;
+}
+
+.icone_cliquable {
+    width: 40px;
+    height: 40px;
+}
+
+.tableau_icones {
+    margin-left: 100px;
+}
+
+.div_aligned {
+    display : inline-block;
 }
