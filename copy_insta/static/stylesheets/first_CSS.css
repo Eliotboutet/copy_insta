@@ -9,5 +9,10 @@ body {
 }
 
 .img {
-    width: 200px;
+    width: 150px;
+    margin-left: 300px;
+}
+
+.barre_recherche {
+    margin-left: 200px;
 }
