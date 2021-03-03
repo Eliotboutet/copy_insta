@@ -2,7 +2,7 @@ body {
     margin: 0;
 }
 
-.panneau_debut {
+.nav_panel {
     border: 2px solid #ccc;
     font-size: 15px;
     line-height: 20px;
@@ -13,18 +13,14 @@ body {
     margin-left: 300px;
 }
 
-.barre_recherche {
+.research_bar {
     margin-left: 200px;
 }
 
-.icone_cliquable {
+.clickable_icon {
     width: 40px;
     height: 40px;
     margin-left: 20px;
-}
-
-.tableau_icones {
-    margin-left: 100px;
 }
 
 .div_aligned {

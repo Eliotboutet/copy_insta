@@ -2,27 +2,28 @@
 
 
 
-    {% block content %}
-        <div class="panneau_debut" >
+    {% block navigation_bar %}
+        <div class="nav_panel" >
             <div class="div_aligned">
                 <img src="/static/images/logo_imt.jpg" class="logo" alt="Logo Imt Atlantique">
-                <label class="barre_recherche">Search for IMT'stagramers:
+                <label class="research_bar">Search for IMT'stagramers:
                     <input type="text">
+                </label>
             </div>
             <div class="div_aligned">
-                </label>
                 <button>Search</button>
+
             </div>
             <div class="div_aligned">
                 <ul>
                     <li style="display:inline">
                         <a href="http://127.0.0.1:5000/">
-                        <img src="/static/images/icone_maison2.png" class="icone_cliquable" alt="logo Home" />
+                        <img src="/static/images/icone_maison2.png" class="clickable_icon" alt="logo Home" />
                         </a>
                     </li>
                     <li style="display:inline">
                         <a href=>
-                            <div class="icone_cliquable div_aligned">
+                            <div class="clickable_icon div_aligned">
                                 Profil
                             </div>
                         </a>
@@ -30,4 +31,8 @@
                 </ul>
             </div>
         </div>
+    {% endblock %}
+
+    {% block main_page %}
+        <div class=""
     {% endblock %}
