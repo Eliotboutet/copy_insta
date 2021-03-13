@@ -15,17 +15,25 @@ with app.app_context():
 
 @app.route('/engineers')
 def hello_world():
-    engineers = get_all_engineers()
-    return engineers.email
+    influencers = get_all_engineers()
+    result = "All influencers:\n"
+    for influencer in influencers:
+        result += " - %s (username:%s)\n" % (influencer.id, influencer.username)
+    return flask.Response(result,
+                          mimetype="text")
 
 
 def get_all_engineers():
-    return models.Engineer.query.filter_by(username='ezraa').first()
+    return models.Engineer.query.all()
 
 
 @app.route('/')
 def first_boot():
-    return flask.render_template("home_page.html.jinja2")
+    influencers = get_all_engineers()
+    result = "All influencers:\n"
+    for influencer in influencers:
+        result += " - %s (username:%s)\n" % (influencer.id, influencer.username)
+    return flask.render_template("home_page.html.jinja2", influencers=influencers)
 
 
 if __name__ == Flask('__main__'):

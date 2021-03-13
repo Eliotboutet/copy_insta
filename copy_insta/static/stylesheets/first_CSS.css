@@ -10,11 +10,11 @@ body {
 
 .logo {
     width: 150px;
-    margin-left: 300px;
+    margin-left: 400px;
 }
 
 .research_bar {
-    margin-left: 200px;
+    margin-left: 150px;
 }
 
 .clickable_icon {
@@ -25,4 +25,12 @@ body {
 
 .div_aligned {
     display : inline-block;
+}
+
+.main_page {
+    margin-left: 600px;
+}
+
+.photos_list{
+    padding-top: 30px;
 }
