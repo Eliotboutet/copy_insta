@@ -13,6 +13,14 @@ with app.app_context():
     init_database()
 
 
+def get_all_engineers():
+    return models.Engineer.query.all()
+
+
+def get_influencer_by_username(influencer_username):
+    return models.Engineer.query.filter_by(username=influencer_username).first()
+
+
 @app.route('/engineers')
 def hello_world():
     influencers = get_all_engineers()
@@ -23,17 +31,21 @@ def hello_world():
                           mimetype="text")
 
 
-def get_all_engineers():
-    return models.Engineer.query.all()
-
-
 @app.route('/')
 def first_boot():
     influencers = get_all_engineers()
     result = "All influencers:\n"
     for influencer in influencers:
         result += " - %s (username:%s)\n" % (influencer.id, influencer.username)
-    return flask.render_template("home_page.html.jinja2", influencers=influencers)
+    return flask.render_template("home_page.html.jinja2",
+                                 influencers=influencers)
+
+
+@app.route('/<string:influencer_username>')
+def profil(influencer_username):
+    influencer = get_influencer_by_username(influencer_username)
+    return flask.render_template("profile_page.jinja2",
+                                influencer=influencer)
 
 
 if __name__ == Flask('__main__'):
