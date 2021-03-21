@@ -47,6 +47,20 @@ def profil(influencer_username):
     return flask.render_template("profile_page.jinja2",
                                 influencer=influencer)
 
+@app.route('/login')
+def login():
+    return flask.render_template("login.html.jinja2")
+
+
+@app.route('/signup')
+def signup():
+    return flask.render_template("signup.html.jinja2")
+
+
+@app.route('/logout')
+def logout():
+    return 'Logout'
+
 
 if __name__ == Flask('__main__'):
     app.run()
