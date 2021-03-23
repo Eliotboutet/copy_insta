@@ -1,4 +1,5 @@
-flask
+flask~=1.1.2
 flask-wtf
 flask-sqlalchemy
 pyYAML
+werkzeug~=1.0.1
