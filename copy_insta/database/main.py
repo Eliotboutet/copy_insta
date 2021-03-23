@@ -6,7 +6,7 @@ main = Blueprint('main', __name__)
 
 
 @main.route('/')
-def index():    
+def index():
     return flask.render_template('home_page.html.jinja2')
 
 
