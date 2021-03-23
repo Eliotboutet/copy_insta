@@ -1,5 +1,5 @@
-{% extends "template_profilepage.jinja2" %}
-
+{% extends "base.html.jinja2" %}
+{% block content %}
 {% block navigation_bar %}
     <div class="nav_panel" >
         <div class="div_aligned">
@@ -43,7 +43,7 @@
                 <ul>
                     <ul>
                         <li class="profile_infos">
-                            {{ influencer.username }}
+                            {{ name }}
                         </li>
                         <li class="profile_infos">
                             Contact
@@ -93,4 +93,5 @@
 
         </table>
     </div>
+{% endblock %}
 {% endblock %}

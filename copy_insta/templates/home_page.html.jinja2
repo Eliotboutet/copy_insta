@@ -1,7 +1,7 @@
-{% extends "template_homepage.jinja2" %}
+{% extends "base.html.jinja2" %}
 
 
-
+{% block content %}
     {% block navigation_bar %}
         <div class="nav_panel" >
             <div class="div_aligned">
@@ -39,7 +39,7 @@
                 <table class="photos_list">
                     <tr>
                         <dl class="photos_list">
-                            <dt><size="4pt"><b>{{ influencer.username }}</b></dt>
+                            <dt size="4pt"><b>{{ influencer.username }}</b></dt>
                             <dd>{{ influencer.email }}</dd>
                         </dl>
                     </tr>
@@ -47,3 +47,4 @@
             {% endfor %}
         </div>
     {% endblock %}
+{% endblock %}
