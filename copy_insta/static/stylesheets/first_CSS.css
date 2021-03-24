@@ -2,17 +2,34 @@ body {
     margin: 0;
 }
 
-.panneau_debut {
+.nav_panel {
     border: 2px solid #ccc;
     font-size: 15px;
-    line-height: 20px;
 }
 
-.img {
+.logo {
     width: 150px;
-    margin-left: 300px;
+    margin-right: 200px;
 }
 
-.barre_recherche {
-    margin-left: 200px;
+.research_bar {
+    margin-left: 100px;
+}
+
+.clickable_icon {
+    width: 40px;
+    height: 40px;
+    margin-left: 20px;
+}
+
+.div_aligned {
+    display : inline-block;
+}
+
+.main_page {
+    margin-left: 600px;
+}
+
+.photos_list{
+    padding-top: 30px;
 }

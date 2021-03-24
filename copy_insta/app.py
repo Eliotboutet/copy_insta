@@ -1,32 +1,52 @@
-import flask
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask_login import LoginManager
 
-from database import models
-from database.database import db, init_database
-
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///Insta.sqlite3'
-db.init_app(app)
-
-with app.app_context():
-    init_database()
+db = SQLAlchemy()
 
 
-@app.route('/engineers')
+def create_app():
+    app = Flask(__name__)
+
+    app.config['SECRET_KEY'] = 'secret-key-goes-here'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
+
+    db.init_app(app)
+
+    # blueprint for auth routes in our app
+    from database.auth import auth as auth_blueprint
+    app.register_blueprint(auth_blueprint)
+
+    # blueprint for non-auth parts of app
+    from database.main import main as main_blueprint
+    app.register_blueprint(main_blueprint)
+
+    login_manager = LoginManager()
+    login_manager.login_view = 'auth.login'
+    login_manager.init_app(app)
+
+    from models import User
+
+    @login_manager.user_loader
+    def load_user(user_id):
+        # since the user_id is just the primary key of our user table, use it in the query for the user
+        return User.query.get(int(user_id))
+
+    return app
+
+
+"""def get_all_engineers():
+    return models.Engineer.query.all()
+
+
+def get_influencer_by_username(influencer_username):
+    return models.Engineer.query.filter_by(username=influencer_username).first()"""
+
+"""@app.route('/engineers')
 def hello_world():
-    engineers = get_all_engineers()
-    return engineers.email
-
-
-def get_all_engineers():
-    return models.Engineer.query.filter_by(username='ezraa').first()
-
-
-@app.route('/')
-def first_boot():
-    return flask.render_template("home_page.html.jinja2")
-
-
-if __name__ == Flask('__main__'):
-    app.run()
+    influencers = get_all_engineers()
+    result = "All influencers:\n"
+    for influencer in influencers:
+        result += " - %s (username:%s)\n" % (influencer.id, influencer.username)
+    return flask.Response(result,
+                          mimetype="text")"""

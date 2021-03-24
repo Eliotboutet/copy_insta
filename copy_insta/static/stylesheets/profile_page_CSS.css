@@ -1,0 +1,23 @@
+.profile_stats {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profile_infos{
+    display: inline-block;
+    padding-top: 20px;
+}
+
+.photo_placement{
+    margin-left: auto;
+    margin-right: auto;
+    border-spacing: 30px;
+}
+
+table {
+    border-collapse: separate;
+}
+
+td {
+    padding: 5px;
+}
