@@ -5,16 +5,15 @@ body {
 .nav_panel {
     border: 2px solid #ccc;
     font-size: 15px;
-    line-height: 20px;
 }
 
 .logo {
     width: 150px;
-    margin-left: 400px;
+    margin-right: 200px;
 }
 
 .research_bar {
-    margin-left: 150px;
+    margin-left: 100px;
 }
 
 .clickable_icon {
