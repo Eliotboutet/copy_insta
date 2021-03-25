@@ -1,38 +1,8 @@
-{% extends "base.html.jinja2" %}
+{% extends "base_with_nav_bar.jinja2" %}
+
 {% block content %}
-{% block navigation_bar %}
-    <div class="nav_panel" >
-        <div class="div_aligned">
-            <img src="/static/images/logo_imt.jpg" class="logo" alt="Logo Imt Atlantique">
-            <label class="research_bar">Search for IMT'stagramers:
-                <input type="text">
-            </label>
-        </div>
-        <div class="div_aligned">
-            <button>Search</button>
+    <link href="{{ url_for('static', filename='stylesheets/profile_page_CSS.css') }}" rel="stylesheet">
 
-        </div>
-        <div class="div_aligned">
-            <ul>
-                <li style="display:inline">
-                    <a href="http://127.0.0.1:5000/">
-                        <img src="/static/images/icone_maison2.png" class="clickable_icon" alt="logo Home" />
-                    </a>
-                </li>
-                <li style="display:inline">
-                    <a href=>
-                        <div class="clickable_icon div_aligned">
-                            Profile
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-{% endblock %}
-
-
-{% block profile_stats %}
 <div style="padding-top: 20px">
     <table class="profile_stats">
         <tr >
@@ -61,9 +31,8 @@
     </table>
 
 </div>
-{% endblock %}
 
-{% block photos_list %}
+
     <div style="padding-top: 20px">
         <!-- Faire une boucle for sur les images de la personne et en afficher 3 par ligne -->
         <table class="photo_placement">
@@ -93,5 +62,5 @@
 
         </table>
     </div>
-{% endblock %}
+
 {% endblock %}
