@@ -8,14 +8,15 @@
         <tr >
             <td>
                 *photo de profil*
+                <img src="/static/images/lucarou.jpg" width="200px" />
             </td>
-            <td style="padding-left: 30px">
+            <td style="padding-left: 40px">
                 <ul>
                     <ul>
                         <li class="profile_infos">
                             {{ name }}
                         </li>
-                        <li class="profile_infos">
+                        <li class="profile_infos" style="padding-left: 40px">
                             {% if current_user.is_authenticated %}
                                 Contact
                             {% endif %}
@@ -35,7 +36,7 @@
 </div>
 
 
-    <div style="padding-top: 20px">
+    <div style="padding-bottom: 500px">
         <!-- Faire une boucle for sur les images de la personne et en afficher 3 par ligne -->
         <table class="photo_placement">
             <tr>
