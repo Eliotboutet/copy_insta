@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 
 db = SQLAlchemy()
+pictures = SQLAlchemy()
 
 
 def create_app():
@@ -12,6 +13,7 @@ def create_app():
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
 
     db.init_app(app)
+    pictures.init_app(app)
 
     # blueprint for auth routes in our app
     from database.auth import auth as auth_blueprint
