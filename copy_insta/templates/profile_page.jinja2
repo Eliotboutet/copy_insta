@@ -1,0 +1,113 @@
+{% extends "base.html.jinja2" %}
+
+
+{% block content %}
+    <div style="padding-top: 20px ; display: flex; flex-direction: row; align-items: center;">
+        <img src="../static/images/blank-profile-picture-973460_640.png" class="profile_picture" alt="profile_picture"/>
+        <table class="profile_stats">
+            <td style="padding-left: 30px">
+                <ul>
+                    <ul>
+                        <li class="profile_infos">
+                            {{ name }}
+                        </li>
+                        <li class="profile_infos">
+                            Contact
+                        </li>
+                    </ul>
+                    <ul class="profile_infos">
+                        *Description*
+                    </ul>
+                </ul>
+            </td>
+        </table>
+        <form style="padding-left: 5rem;">
+            <label for="upload_image">
+                <input name="upload_imagge" type="file">
+            </label>
+        </form>
+    </div>
+
+    <div class="thin_line"></div>
+
+    <div class="mx-5 mt-3">
+        <div class="row">
+            <div class="column">
+                <img src="../static/images/blank-profile-picture-973460_640.png" class="picture"
+                     alt="profile_picture"/>
+                <img src="../static/images/blank-profile-picture-973460_640.png" class="picture"
+                     alt="profile_picture"/>
+                <img src="../static/images/blank-profile-picture-973460_640.png" class="picture"
+                     alt="profile_picture"/>
+                <img src="../static/images/blank-profile-picture-973460_640.png" class="picture"
+                     alt="profile_picture"/>
+                <img src="../static/images/blank-profile-picture-973460_640.png" class="picture"
+                     alt="profile_picture"/>
+                <img src="../static/images/blank-profile-picture-973460_640.png" class="picture"
+                     alt="profile_picture"/>
+            </div>
+            <div class="column">
+                <img src="../static/images/blank-profile-picture-973460_640.png" class="picture"
+                     alt="profile_picture"/>
+                <img src="../static/images/blank-profile-picture-973460_640.png" class="picture"
+                     alt="profile_picture"/>
+                <img src="../static/images/blank-profile-picture-973460_640.png" class="picture"
+                     alt="profile_picture"/>
+                <img src="../static/images/blank-profile-picture-973460_640.png" class="picture"
+                     alt="profile_picture"/>
+                <img src="../static/images/blank-profile-picture-973460_640.png" class="picture"
+                     alt="profile_picture"/>
+                <img src="../static/images/blank-profile-picture-973460_640.png" class="picture"
+                     alt="profile_picture"/>
+            </div>
+            <div class="column">
+                <img src="../static/images/blank-profile-picture-973460_640.png" class="picture"
+                     alt="profile_picture"/>
+                <img src="../static/images/blank-profile-picture-973460_640.png" class="picture"
+                     alt="profile_picture"/>
+                <img src="../static/images/blank-profile-picture-973460_640.png" class="picture"
+                     alt="profile_picture"/>
+                <img src="../static/images/blank-profile-picture-973460_640.png" class="picture"
+                     alt="profile_picture"/>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+{% endblock %}
+
+
+{% block photos_list %}
+    <div style="padding-top: 20px">
+        <!-- Faire une boucle for sur les images de la personne et en afficher 3 par ligne -->
+        <table class="photo_placement">
+            <tr>
+                <td>
+                    img1
+                </td>
+                <td>
+                    img2
+                </td>
+                <td>
+                    img3
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    img4
+                </td>
+                <td>
+                    img5
+                </td>
+                <td>
+                    img6
+                </td>
+            </tr>
+
+
+        </table>
+    </div>
+{% endblock %}

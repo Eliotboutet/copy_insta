@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IMT'stagram</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css"/>
+    <link href="{{ url_for('static', filename='stylesheets/first_CSS.css') }}" rel="stylesheet">
+</head>
+
+<body>
+<section class="hero is-primary is-fullheight">
+    <div class="hero-head">
+        <nav class="navbar">
+
+            <div id="navbarMenuHeroA" class="navbar-menu">
+                <div class="nav_panel">
+                    <div class="div_aligned">
+                        <img src="/static/images/logo_imt.jpg" class="logo" alt="Logo Imt Atlantique">
+                        <label class="research_bar">Search for IMT'stagramers:
+                            <input type="text">
+                        </label>
+                    </div>
+                    <div class="div_aligned" style="margin-right: 250px">
+                        <button>Search</button>
+
+                    </div>
+                    <div class="div_aligned">
+                        <ul>
+                            <li style="display:inline">
+                                <a href=>
+
+                                    <div class="clickable_icon div_aligned">
+                                        <a href="{{ url_for('main.index') }}" class="navbar-item">
+                                            Home
+                                        </a>
+                                    </div>
+                                    <div class="clickable_icon div_aligned">
+                                        {% if current_user.is_authenticated %}
+                                            <a href="{{ url_for('main.profile') }}" class="navbar-item">
+                                                Profile
+                                            </a>
+                                        {% endif %}
+                                        {% if not current_user.is_authenticated %}
+                                            <a href="{{ url_for('auth.login') }}" class="navbar-item">
+                                                Login
+                                            </a>
+                                        {% endif %}
+                                    </div>
+                                    <div class="clickable_icon div_aligned">
+                                        {% if not current_user.is_authenticated %}
+                                            <a href="{{ url_for('auth.signup') }}" class="navbar-item"
+                                               style="display: inline-block">
+                                                Sign Up
+                                            </a>
+                                        {% endif %}
+                                        {% if current_user.is_authenticated %}
+                                            <a href="{{ url_for('auth.logout') }}" class="navbar-item">
+                                                Logout
+                                            </a>
+                                        {% endif %}
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="hero-body" style="align-items: unset;">
+        <div class="container has-text-centered">
+            {% block content %}
+
+            {% endblock %}
+        </div>
+    </div>
+</section>
+</body>
+
+</html>
