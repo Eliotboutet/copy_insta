@@ -13,3 +13,6 @@ class Pictures(UserMixin, pictures.Model):
     id = pictures.Column(pictures.Integer, primary_key=True)
     who_posted = pictures.Column(pictures.Integer)
     keywords = pictures.Column(pictures.String(2000))
+    likes = pictures.Column(pictures.Integer)
+    comments = pictures.Column(pictures.TEXT)
+    photo = pictures.Column(pictures.BLOB)
