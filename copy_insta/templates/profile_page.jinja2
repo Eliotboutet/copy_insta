@@ -16,7 +16,9 @@
                             {{ name }}
                         </li>
                         <li class="profile_infos">
-                            Contact
+                            {% if current_user.is_authenticated %}
+                                Contact
+                            {% endif %}
                         </li>
                     </ul>
                     <ul class="profile_infos">
