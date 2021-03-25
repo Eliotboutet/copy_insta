@@ -1,44 +1,10 @@
 {% extends "base.html.jinja2" %}
+
+
 {% block content %}
-{% block navigation_bar %}
-    <div class="nav_panel" >
-        <div class="div_aligned">
-            <img src="/static/images/logo_imt.jpg" class="logo" alt="Logo Imt Atlantique">
-            <label class="research_bar">Search for IMT'stagramers:
-                <input type="text">
-            </label>
-        </div>
-        <div class="div_aligned">
-            <button>Search</button>
-
-        </div>
-        <div class="div_aligned">
-            <ul>
-                <li style="display:inline">
-                    <a href="http://127.0.0.1:5000/">
-                        <img src="/static/images/icone_maison2.png" class="clickable_icon" alt="logo Home" />
-                    </a>
-                </li>
-                <li style="display:inline">
-                    <a href=>
-                        <div class="clickable_icon div_aligned">
-                            Profile
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-{% endblock %}
-
-
-{% block profile_stats %}
-<div style="padding-top: 20px">
-    <table class="profile_stats">
-        <tr >
-            <td>
-                *photo de profil*
-            </td>
+    <div style="padding-top: 20px ; display: flex; flex-direction: row; align-items: center;">
+        <img src="../static/images/blank-profile-picture-973460_640.png" class="profile_picture" alt="profile_picture"/>
+        <table class="profile_stats">
             <td style="padding-left: 30px">
                 <ul>
                     <ul>
@@ -53,15 +19,66 @@
                         *Description*
                     </ul>
                 </ul>
-
             </td>
+        </table>
+        <form style="padding-left: 5rem;">
+            <label for="upload_image">
+                <input name="upload_imagge" type="file">
+            </label>
+        </form>
+    </div>
 
-        </tr>
+    <div class="thin_line"></div>
 
-    </table>
+    <div class="mx-5 mt-3">
+        <div class="row">
+            <div class="column">
+                <img src="../static/images/blank-profile-picture-973460_640.png" class="picture"
+                     alt="profile_picture"/>
+                <img src="../static/images/blank-profile-picture-973460_640.png" class="picture"
+                     alt="profile_picture"/>
+                <img src="../static/images/blank-profile-picture-973460_640.png" class="picture"
+                     alt="profile_picture"/>
+                <img src="../static/images/blank-profile-picture-973460_640.png" class="picture"
+                     alt="profile_picture"/>
+                <img src="../static/images/blank-profile-picture-973460_640.png" class="picture"
+                     alt="profile_picture"/>
+                <img src="../static/images/blank-profile-picture-973460_640.png" class="picture"
+                     alt="profile_picture"/>
+            </div>
+            <div class="column">
+                <img src="../static/images/blank-profile-picture-973460_640.png" class="picture"
+                     alt="profile_picture"/>
+                <img src="../static/images/blank-profile-picture-973460_640.png" class="picture"
+                     alt="profile_picture"/>
+                <img src="../static/images/blank-profile-picture-973460_640.png" class="picture"
+                     alt="profile_picture"/>
+                <img src="../static/images/blank-profile-picture-973460_640.png" class="picture"
+                     alt="profile_picture"/>
+                <img src="../static/images/blank-profile-picture-973460_640.png" class="picture"
+                     alt="profile_picture"/>
+                <img src="../static/images/blank-profile-picture-973460_640.png" class="picture"
+                     alt="profile_picture"/>
+            </div>
+            <div class="column">
+                <img src="../static/images/blank-profile-picture-973460_640.png" class="picture"
+                     alt="profile_picture"/>
+                <img src="../static/images/blank-profile-picture-973460_640.png" class="picture"
+                     alt="profile_picture"/>
+                <img src="../static/images/blank-profile-picture-973460_640.png" class="picture"
+                     alt="profile_picture"/>
+                <img src="../static/images/blank-profile-picture-973460_640.png" class="picture"
+                     alt="profile_picture"/>
+            </div>
 
-</div>
+        </div>
+    </div>
+
+
+
+
 {% endblock %}
+
 
 {% block photos_list %}
     <div style="padding-top: 20px">
@@ -93,5 +110,4 @@
 
         </table>
     </div>
-{% endblock %}
 {% endblock %}
