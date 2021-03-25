@@ -1,87 +1,42 @@
-{% extends "base.html.jinja2" %}
-
+{% extends "base_with_nav_bar.jinja2" %}
 
 {% block content %}
-    <div style="padding-top: 20px ; display: flex; flex-direction: row; align-items: center;">
-        <img src="../static/images/blank-profile-picture-973460_640.png" class="profile_picture" alt="profile_picture"/>
-        <table class="profile_stats">
-            <td style="padding-left: 30px">
+    <link href="{{ url_for('static', filename='stylesheets/profile_page_CSS.css') }}" rel="stylesheet">
+
+<div style="padding-top: 20px">
+    <table class="profile_stats">
+        <tr >
+            <td>
+                *photo de profil*
+                <img src="/static/images/lucarou.jpg" width="200px" />
+            </td>
+            <td style="padding-left: 40px">
                 <ul>
                     <ul>
                         <li class="profile_infos">
-                            {{ name }}
+                            {% block name_displayed %}
+                            {% endblock %}
                         </li>
-                        <li class="profile_infos">
-                            Contact
+                        <li class="profile_infos" style="padding-left: 40px">
+                            {% block can_contact %}
+                            {% endblock %}
                         </li>
                     </ul>
                     <ul class="profile_infos">
                         *Description*
                     </ul>
                 </ul>
+
             </td>
-        </table>
-        <form style="padding-left: 5rem;">
-            <label for="upload_image">
-                <input name="upload_imagge" type="file">
-            </label>
-        </form>
-    </div>
 
-    <div class="thin_line"></div>
+        </tr>
 
-    <div class="mx-5 mt-3">
-        <div class="row">
-            <div class="column">
-                <img src="../static/images/blank-profile-picture-973460_640.png" class="picture"
-                     alt="profile_picture"/>
-                <img src="../static/images/blank-profile-picture-973460_640.png" class="picture"
-                     alt="profile_picture"/>
-                <img src="../static/images/blank-profile-picture-973460_640.png" class="picture"
-                     alt="profile_picture"/>
-                <img src="../static/images/blank-profile-picture-973460_640.png" class="picture"
-                     alt="profile_picture"/>
-                <img src="../static/images/blank-profile-picture-973460_640.png" class="picture"
-                     alt="profile_picture"/>
-                <img src="../static/images/blank-profile-picture-973460_640.png" class="picture"
-                     alt="profile_picture"/>
-            </div>
-            <div class="column">
-                <img src="../static/images/blank-profile-picture-973460_640.png" class="picture"
-                     alt="profile_picture"/>
-                <img src="../static/images/blank-profile-picture-973460_640.png" class="picture"
-                     alt="profile_picture"/>
-                <img src="../static/images/blank-profile-picture-973460_640.png" class="picture"
-                     alt="profile_picture"/>
-                <img src="../static/images/blank-profile-picture-973460_640.png" class="picture"
-                     alt="profile_picture"/>
-                <img src="../static/images/blank-profile-picture-973460_640.png" class="picture"
-                     alt="profile_picture"/>
-                <img src="../static/images/blank-profile-picture-973460_640.png" class="picture"
-                     alt="profile_picture"/>
-            </div>
-            <div class="column">
-                <img src="../static/images/blank-profile-picture-973460_640.png" class="picture"
-                     alt="profile_picture"/>
-                <img src="../static/images/blank-profile-picture-973460_640.png" class="picture"
-                     alt="profile_picture"/>
-                <img src="../static/images/blank-profile-picture-973460_640.png" class="picture"
-                     alt="profile_picture"/>
-                <img src="../static/images/blank-profile-picture-973460_640.png" class="picture"
-                     alt="profile_picture"/>
-            </div>
+    </table>
 
-        </div>
-    </div>
+</div>
 
 
-
-
-{% endblock %}
-
-
-{% block photos_list %}
-    <div style="padding-top: 20px">
+    <div style="padding-bottom: 500px">
         <!-- Faire une boucle for sur les images de la personne et en afficher 3 par ligne -->
         <table class="photo_placement">
             <tr>
@@ -109,5 +64,8 @@
 
 
         </table>
+        {% block can_add_photo %}
+        {% endblock %}
     </div>
+
 {% endblock %}

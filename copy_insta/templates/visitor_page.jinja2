@@ -1,0 +1,11 @@
+{% extends "profile_page.jinja2"   %}
+
+{% block name_displayed %}
+    {{influencer.name}}
+{% endblock %}
+
+{% block can_contact %}
+    {% if current_user.is_authenticated %}
+        Contact
+    {% endif %}
+{% endblock %}
