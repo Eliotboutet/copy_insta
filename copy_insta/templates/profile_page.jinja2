@@ -17,9 +17,8 @@
                             {{ name }}
                         </li>
                         <li class="profile_infos" style="padding-left: 40px">
-                            {% if current_user.is_authenticated %}
-                                Contact
-                            {% endif %}
+                            {% block can_contact %}
+                            {% endblock %}
                         </li>
                     </ul>
                     <ul class="profile_infos">
@@ -64,7 +63,8 @@
 
 
         </table>
-        <img src="/static/images/Logo-plus.png" width="100px" />
+        {% block can_add_photo %}
+        {% endblock %}
     </div>
 
 {% endblock %}

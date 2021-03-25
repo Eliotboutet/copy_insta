@@ -13,4 +13,4 @@ def index():
 @main.route('/profile')
 @login_required
 def profile():
-    return flask.render_template('profile_page.jinja2', name=current_user.name)
+    return flask.render_template('perso_profile_page.jinja2', name=current_user.name)
