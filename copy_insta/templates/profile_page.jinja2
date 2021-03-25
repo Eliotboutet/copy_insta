@@ -14,7 +14,8 @@
                 <ul>
                     <ul>
                         <li class="profile_infos">
-                            {{ name }}
+                            {% block name_displayed %}
+                            {% endblock %}
                         </li>
                         <li class="profile_infos" style="padding-left: 40px">
                             {% block can_contact %}

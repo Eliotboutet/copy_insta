@@ -8,6 +8,12 @@
     <title>IMT'stagram</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
     <link href="{{ url_for('static', filename='stylesheets/first_CSS.css') }}" rel="stylesheet">
+    <script>
+        function controle(){
+            var saisie =document.getElementById("name_searched").value;
+            document.location.href=saisie
+        }
+    </script>
 </head>
 
 <body>
@@ -22,12 +28,11 @@
                             <div class="div_aligned">
                                 <img src="/static/images/logo_imt.jpg" class="logo" alt="Logo Imt Atlantique">
                                 <label class="research_bar">Search for IMT'stagramers:
-                                    <input type="text">
+                                    <input type="text" id= "name_searched" name="name_searched">
                                 </label>
                             </div>
                             <div class="div_aligned" style="margin-right: 250px">
-                                <button>Search</button>
-
+                                <button onclick=controle() >Search</button>
                             </div>
                             <div class="div_aligned">
                                 <ul>
