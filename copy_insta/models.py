@@ -8,6 +8,7 @@ class User(UserMixin, db.Model):
     password = db.Column(db.String(100))
     name = db.Column(db.String(1000))
 
+
 class Pictures(UserMixin, pictures.Model):
     id = pictures.Column(pictures.Integer, primary_key=True)
     who_posted = pictures.Column(pictures.Integer)
