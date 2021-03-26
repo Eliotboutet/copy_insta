@@ -9,9 +9,10 @@ class User(UserMixin, db.Model):
     password = db.Column(db.String(100))
     name = db.Column(db.String(1000))
 
-class Pictures(UserMixin, db.Model):
+class Pictures(db.Model):
     __tablename__='pictures'
     id = db.Column(db.Integer, primary_key=True)  # primary keys are required by SQLAlchemy
-    who_posted = db.Column(db.Interval, nullable=False)
-    likes = db.Column(db.Integer)
-    comments = db.Column(db.TEXT)
+    who_posted = db.Column(db.Integer, nullable=True)
+    likes = db.Column(db.Integer, nullable=True)
+    comments = db.Column(db.TEXT, nullable=True)
+    pic_name = db.Column(db.String(1000))

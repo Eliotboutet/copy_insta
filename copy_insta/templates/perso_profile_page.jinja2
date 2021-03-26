@@ -6,4 +6,7 @@
 
 {% block can_add_photo %}
     <img src="/static/images/Logo-plus.png" width="100px" />
+    <form action="/add_photo" method = "POST">
+    <input name="photo" type = "text">
+    </form>
 {% endblock %}

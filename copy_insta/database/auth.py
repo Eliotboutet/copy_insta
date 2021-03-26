@@ -64,3 +64,5 @@ def signup_post():
 def logout():
     logout_user()
     return flask.redirect(flask.url_for('main.index'))
+
+

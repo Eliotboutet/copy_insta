@@ -1,8 +1,8 @@
 import flask
 from flask import Blueprint
 from flask_login import login_required, current_user
-from models import User
-
+from models import User, Pictures
+from app import db
 main = Blueprint('main', __name__)
 
 
@@ -19,6 +19,15 @@ def index():
 @login_required
 def profile():
     return flask.render_template('perso_profile_page.jinja2', name=current_user.name)
+
+
+@main.route('/add_photo', methods=['POST'])
+@login_required
+def add_photo():
+    name = flask.request.form.get("photo")
+    new_pic = Pictures(pic_name=name)
+    db.session.add(new_pic)
+    db.session.commit()
 
 
 @main.route("/<name_searched>")
